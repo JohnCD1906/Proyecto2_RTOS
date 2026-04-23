@@ -6,8 +6,8 @@
 
 // Pines GPIO (numeracion BCM)
 #define LED0 17   // bit 0 (LSB)
-#define LED1 18   // bit 1
-#define LED2 27   // bit 2
+#define LED1 25   // bit 1
+#define LED2 4   // bit 2
 #define LED3 23   // bit 3 (MSB)
 
 int pines[4] = {LED0, LED1, LED2, LED3};
