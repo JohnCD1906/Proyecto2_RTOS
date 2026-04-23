@@ -14,7 +14,7 @@ pwm.start(0)
 def set_servo_angle(angle):
     duty_cycle = (angle / 18) + 2.5
     pwm.ChangeDutyCycle(duty_cycle)
-    time.sleep(0.3)  # Give the servo time to reach the desired angle
+    time.sleep(0.3)  # Tiempo de retardo para que el servo alcance la posicion solicitada
 
 try:
     # Rotar servo de 0 a 180 [deg] con paso +1[deg]
@@ -26,6 +26,6 @@ try:
         set_servo_angle(angle)
 
 except KeyboardInterrupt:
-    # If the user presses Ctrl+C, clean up the GPIO configuration
+    # Detener el programa y limpiar el GPIO al interrumpir el programa con ctrl + c
     pwm.stop()
     GPIO.cleanup()
