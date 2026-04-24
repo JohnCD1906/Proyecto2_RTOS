@@ -5,8 +5,8 @@ import adafruit_ssd1306
 from PIL import Image, ImageDraw, ImageFont
 
 # --- Configuración de Pines ---
-PIN_MOTOR = 17  # Pin donde entra la señal PWM del motor
-PIN_SERVO = 27  # Pin donde entra la señal PWM del servo
+PIN_MOTOR = 12  # Pin donde entra la señal PWM del motor
+PIN_SERVO = 18  # Pin donde entra la señal PWM del servo
 
 # --- Inicialización pigpio (Lectura de Pulsos) ---
 pi = pigpio.pi()
@@ -63,7 +63,7 @@ try:
         # 1. Procesar Datos
         # Para el motor: Supongamos que 100% duty = 5000 RPM
         duty_motor = lector_motor.get_duty_cycle()
-        rpm = int(duty_motor * 50) 
+        rpm = int(duty_motor * 9) 
 
         # Para el servo: 1000us = 0°, 2000us = 180°
         pw = lector_servo.get_pulse_width()

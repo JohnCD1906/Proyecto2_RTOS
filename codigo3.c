@@ -6,15 +6,15 @@
 
 // Pines GPIO (numeracion BCM)
 #define LED0 17   // bit 0 (LSB)
-#define LED1 18   // bit 1
-#define LED2 27   // bit 2
+#define LED1 25   // bit 1
+#define LED2 4    // bit 2
 #define LED3 23   // bit 3 (MSB)
 
 int pines[4] = {LED0, LED1, LED2, LED3};
 
 void setup_pines() {
     wiringPiSetupGpio();  // usar numeracion BCM
-    for (int i = 0; i <= 4; i++) {
+    for (int i = 0; i < 4; i++) {
         pinMode(pines[i], OUTPUT);
         digitalWrite(pines[i], LOW);
     }
@@ -22,13 +22,13 @@ void setup_pines() {
 
 void mostrar_valor(int valor) {
     // Escribe cada bit del valor en su LED correspondiente
-    for (int i = 0; i <= 4; i++) {
+    for (int i = 0; i < 4; i++) {
         digitalWrite(pines[i], (valor >> i) & 1);
     }
 }
 
 void apagar_leds() {
-    for (int i = 0; i <= 4; i++) {
+    for (int i = 0; i < 4; i++) {
         digitalWrite(pines[i], LOW);
     }
 }
