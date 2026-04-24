@@ -41,7 +41,7 @@ int main() {
         for (int i = 0xF; i >= 0x0; i--) {
             printf("  Valor: 0x%X\n", i);
             mostrar_valor(i);
-            delay(1000);
+            delay(500);
         }
 
     apagar_leds();

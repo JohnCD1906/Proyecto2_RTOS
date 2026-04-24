@@ -17,10 +17,6 @@ if not pi.connected:
 pw_motor = 0
 pw_servo = 0
 
-def cb_motor(gpio, level, tick):
-    global pw_motor
-    if level == 1: self.start_tick = tick
-    else: pw_motor = pigpio.tickDiff(self.start_tick, tick)
 
 # Usaremos una clase simple para manejar la lectura de PWM
 class PWM_Reader:
@@ -55,7 +51,7 @@ lector_servo = PWM_Reader(pi, PIN_SERVO)
 
 # --- Inicialización OLED ---
 i2c = busio.I2C(board.SCL, board.SDA)
-oled = adafruit_ssd1306.SSD1306_I2C(128, 64, i2c)
+oled = adafruit_ssd1306.SSD1306_I2C(128, 64, i2c, addr=0x3C)
 font = ImageFont.load_default()
 
 try:

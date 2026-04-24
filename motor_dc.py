@@ -1,10 +1,13 @@
 import RPi.GPIO as GPIO
 import time
 
+
 # Configuracion de pin GPIO
 MOTOR_DRIVER_PIN = 12
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(MOTOR_DRIVER_PIN, GPIO.OUT)
+
+GPIO.setwarnings(False)
 
 # Configuracion PWM
 pwm_frequency = 50  # [Hz] de acuerdo con la hoja de datos

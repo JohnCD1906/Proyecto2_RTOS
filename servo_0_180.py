@@ -18,11 +18,11 @@ def set_servo_angle(angle):
 
 try:
     # Rotar servo de 0 a 180 [deg] con paso +1[deg]
-    for angle in range(90, -91, -10):
+    for angle in range(180, -1, -10):
         set_servo_angle(angle)
 
     # Rotar servo de 180 to 0 [deg] con paso -1[deg]
-    for angle in range(-90, 91, 10):
+    for angle in range(0, 181, 10):
         set_servo_angle(angle)
 
 except KeyboardInterrupt:
